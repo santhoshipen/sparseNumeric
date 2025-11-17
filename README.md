@@ -9,6 +9,7 @@
 # usethis::use_github_actions_badge("R-CMD-check")
 -->
 
+[![R-CMD-check](https://github.com/santhoshipen/sparseNumeric/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/santhoshipen/sparseNumeric/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The sparseNumeric package implements an S4 class sparse_numeric that
