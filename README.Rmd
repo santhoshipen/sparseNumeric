@@ -1,0 +1,107 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+
+# sparseNumeric
+
+<!-- badges: start -->
+<!-- The R CMD check badge will be inserted here by:
+# usethis::use_github_actions_badge("R-CMD-check")
+-->
+<!-- badges: end -->
+
+
+The sparseNumeric package implements an S4 class sparse_numeric that stores
+only the non-zero entries of a numeric vector along with their positions, while
+tracking the full length of the vector. This representation is useful for
+working with sparse numeric data efficiently.
+
+The package provides:
+
+- the sparse_numeric S4 class and validity checks
+- coercion to and from base R numeric
+- arithmetic operations (+, -, *) via sparse_add, sparse_sub,sparse_mult, and sparse_crossprod
+- methods for mean(), L2 norm(), and standardize()
+- custom show() and plot() methods for sparse vectors
+
+## Installation
+
+You can install the development version of sparseNumeric like so:
+
+From a local clone of the repository:
+
+```{r}
+# in the sparseNumeric project directory
+# devtools::install()
+```
+
+Once the repository is on GitHub, you can install with:
+
+```{r}
+# install.packages("devtools")
+# devtools::install_github("santhoshipen/sparseNumeric")
+```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+Load the package:
+```{r example}
+library(sparseNumeric)
+## basic example code
+
+# Create a sparse_numeric object
+
+x_dense <- c(0, 0, 3, 0, 5)
+x <- as(x_dense, "sparse_numeric")
+x
+
+# Mean 
+mean(x)
+
+# L2 Norm 
+norm(x)
+
+# Standardization 
+standardize(x)
+
+# Arithmetic with another sparse vector
+y_dense <- c(1, 0, 3, 0, 2)
+y <- as(y_dense, "sparse_numeric")
+
+as(x + y, "numeric")
+as(x - y, "numeric")
+as(x * y, "numeric")
+
+# Plot overlapping non-zero positions
+plot(x, y)
+```
+
+## Why README.Rmd?
+
+Using README.Rmd allows you to include runnable R code chunks, which
+automatically generate output and figures in the knitted README.md.
+
+To update the README, run:
+
+```{r}
+# devtools::build_readme()
+```
+
+You can also embed plots:
+```{r}
+# plot(pressure)
+```

@@ -1,0 +1,22 @@
+Package: sparseNumeric
+Title: Sparse Numeric Vector Class and Utilities
+Version: 0.0.0.9000
+Authors@R: 
+    person("Santhoshi", "Penmetsa", 
+           email = "santhoshi.penmetsa@utexas.edu",
+           role = c("aut", "cre"))
+Description: Provides an S4 class for representing sparse numeric vectors 
+    using only non-zero values and their positions. Includes methods for 
+    arithmetic operations, coercion between sparse and dense formats, 
+    vector standardization, Euclidean norm calculation, plotting, and 
+    additional utilities for efficient sparse vector manipulation.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Imports:
+    methods,
+    graphics
+Suggests:
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
